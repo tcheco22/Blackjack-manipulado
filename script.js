@@ -115,3 +115,35 @@ function endGame() {
     document.getElementById('stand-button').disabled = true;
     document.getElementById('start-button').disabled = false;
 }
+/* --- Placar de vitórias --- */
+.scoreboard {
+    background-color: #145214;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    margin-top: 20px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.scoreboard h3 {
+    margin-bottom: 10px;
+}
+
+.scoreboard p {
+    margin: 5px 0;
+    font-size: 1.1em;
+}
+
+#reset-score {
+    margin-top: 10px;
+    background-color: #c0392b;
+    border: none;
+    padding: 8px 15px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#reset-score:hover {
+    background-color: #e74c3c;
+}
