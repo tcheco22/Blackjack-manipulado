@@ -88,3 +88,34 @@ button:disabled {
 #dealer-wins {
     top: 310px; 
 }
+// --- PLACAR ---
+let playerWins = localStorage.getItem('playerWins') ? parseInt(localStorage.getItem('playerWins')) : 0;
+let dealerWins = localStorage.getItem('dealerWins') ? parseInt(localStorage.getItem('dealerWins')) : 0;
+
+// Mostra os valores salvos na tela
+document.getElementById('player-wins').textContent = playerWins;
+document.getElementById('dealer-wins').textContent = dealerWins;
+
+// Atualiza placar e salva
+function updateScore(winner) {
+    if (winner === 'player') {
+        playerWins++;
+        localStorage.setItem('playerWins', playerWins);
+    } else if (winner === 'dealer') {
+        dealerWins++;
+        localStorage.setItem('dealerWins', dealerWins);
+    }
+
+    document.getElementById('player-wins').textContent = playerWins;
+    document.getElementById('dealer-wins').textContent = dealerWins;
+}
+
+// Botão de reset
+document.getElementById('reset-score').addEventListener('click', () => {
+    playerWins = 0;
+    dealerWins = 0;
+    localStorage.removeItem('playerWins');
+    localStorage.removeItem('dealerWins');
+    document.getElementById('player-wins').textContent = 0;
+    document.getElementById('dealer-wins').textContent = 0;
+});
